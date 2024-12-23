@@ -1,5 +1,4 @@
 # Content Management System with CodeIgniter 4
-
 A simple Content Management System (CMS) built with CodeIgniter 4 for managing and organizing content efficiently.
 
 ## Feature
@@ -32,3 +31,6 @@ Don't forget this project use mysqli for database
    
 ## Run project
 $php spark serve
+
+## Run tailwind
+npx tailwindcss -i ./src/input.css -o ./public/assets/css/styles.css --watch
