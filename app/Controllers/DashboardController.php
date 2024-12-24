@@ -54,18 +54,6 @@ class DashboardController extends BaseController
         if ($user) {
             // Password Verification
             if (password_verify($inputPassword, $user['password'])) {
-                // Captcha Verification
-                $recaptchaResponse = $this->request->getPost('g-recaptcha-response');
-                $secretKey = '6Ld80YUqAAAAAO-x6KF3WkqyeFSOL6CoKnYcgbsF';
-
-                $url = 'https://www.google.com/recaptcha/api/siteverify';
-                $response = file_get_contents($url . '?secret=' . $secretKey . '&response=' . $recaptchaResponse);
-                $responseKeys = json_decode($response, true);
-
-                if (!$responseKeys['success']) {
-                    return redirect()->back()->with('error', 'Captcha verification failed.');
-                }
-
                 // Login
                 session()->set([
                     'id_admin' => $user['id_admin'],
