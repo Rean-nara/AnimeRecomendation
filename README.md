@@ -14,7 +14,7 @@ A simple Content Management System (CMS) built with CodeIgniter 4 for managing a
 
 ## Installation
 
-1. Clone or download this repository:
+1. Clone or download this repository
 2. Type 'Composer install' in your CLI project location
 3. Copy `env` to `.env` and tailor for your app, specifically the baseURL
 and any database settings.
