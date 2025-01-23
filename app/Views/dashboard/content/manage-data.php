@@ -155,7 +155,7 @@
                 <div class="relative">
                     <input type="file" name="poster" id="poster"
                         class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10 file:cursor-pointer"
-                        accept="image/*" onchange="updateFileLabel(this, 'poster-label')">
+                        accept=".jpg, .jpeg, .png" onchange="updateFileLabel(this, 'poster-label')">
                     <div
                         class="border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-blue-500 focus:outline-none text-sm flex items-center justify-between cursor-pointer">
                         <span id="poster-label" class="text-gray-600 line-clamp-4" onload="openForm()"></span>
@@ -178,7 +178,7 @@
                 <div class="relative">
                     <input type="file" name="nav-cover" id="nav-cover"
                         class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10 file:cursor-pointer"
-                        accept="image/*" onchange="updateFileLabel(this, 'nav-cover-label')">
+                        accept=".jpg, .jpeg, .png" onchange="updateFileLabel(this, 'nav-cover-label')">
                     <div
                         class="border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-blue-500 focus:outline-none text-sm flex items-center justify-between cursor-pointer">
                         <span id="nav-cover-label" class="text-gray-600 line-clamp-4" onload="openForm()"></span>

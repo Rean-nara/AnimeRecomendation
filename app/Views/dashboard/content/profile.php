@@ -2,13 +2,13 @@
 
 <?= $this->section('content') ?>
 <div class="flex justify-center mt-5">
-    <div class="w-[27rem] relative">
-        <div class="relative flex items-center gap-10">
+    <div class="w-[28rem] relative">
+        <div class="relative flex items-center gap-4">
             <div class="relative h-44 w-44 rounded-full overflow-hidden">
                 <!-- overlay -->
                 <div id="activeEditPP"
                     class="hidden absolute bg-slate-900 rounded-full rotate-90 h-52 w-52 -right-[1.2rem] -bottom-32 opacity-0 hover:opacity-90 transition-opacity duration-300 z-20">
-                    <p class="text-stone-200 text-sm bottom-24 -left-8 absolute -rotate-90" id="profileteks">
+                    <p class="text-stone-200 text-sm bottom-[5.7rem] -left-8 absolute -rotate-90" id="profileteks">
                         Click edit button first!</p>
                     <button class="absolute left-[2.7rem] bottom-[5.5rem] -rotate-90" id="changeProfile"><img
                             src="<?= esc('/assets/icon/camera-svgrepo-com.svg') ?>" alt="camera"
@@ -49,9 +49,10 @@
                             <input type="text" name="fullname" id="fullname" value="<?= esc(($fullname)) ?>" readonly
                                 class="border border-gray-300 rounded-lg p-1 w-full focus:outline-none text-lg text-stone-700">
                         </div>
-                        <div class="absolute left-1 top-28 w-44 h-24 opacity-0 z-10">
+                        <div class="absolute left-1 top-28 w-44 h-24 opacity-0 z-10 hidden" id="inputImage">
                             <input type="hidden" id="old_pp" name="old_pp" value="<?= esc($profilepics) ?>">
-                            <input type="file" id="new_pp" name="new_pp" accept="image/*" onchange="loadImage(event)">
+                            <input type="file" id="new_pp" name="new_pp" accept=".jpg, .jpeg, .png"
+                                onchange="loadImage(event)">
                         </div>
                         <div class="flex justify-end w-full">
                             <button type="button" onclick="editable(event)" id="submit"
@@ -129,6 +130,7 @@
         const email = document.getElementById("email");
         const fullname = document.getElementById("fullname");
         const profileteks = document.getElementById("profileteks");
+        const inputImage = document.getElementById("inputImage");
         const new_pp = document.getElementById("new_pp");
         const changeProfile = document.getElementById("changeProfile");
         const submit = document.getElementById("submit");
@@ -139,6 +141,7 @@
         email.removeAttribute("readonly");
         fullname.removeAttribute("readonly");
         profileteks.innerText = "Click to change photo";
+        inputImage.classList.remove("hidden");
         new_pp.classList.remove("hidden");
         changeProfile.setAttribute("onclick", "changeProfile()");
         submit.innerText = "Save Changes";
