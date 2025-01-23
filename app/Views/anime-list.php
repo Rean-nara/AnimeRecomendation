@@ -79,11 +79,11 @@
         <!-- List -->
         <h1 class="mt-8 flex justify-center text-xl" id="listAlphabet">A</h1>
         <hr class="bg-slate-800 rounded h-[3px]">
-        <div class="mt-4 min-h-[11.6rem]">
+        <div class="mt-4 min-h-screen">
             <ul class="flex flex-wrap text-lg list-disc list-inside" id="listContainer">
                 <?php foreach ($anime as $data): ?>
                     <li class="w-1/3">
-                        <a href=" <?= base_url('anime/' . urlencode($data['title'])) ?>">
+                        <a href="<?= base_url('anime/detail/' . urlencode($data['id_anime'])) ?>">
                             <?= esc($data['title']); ?></a>
                     </li>
                 <?php endforeach; ?>

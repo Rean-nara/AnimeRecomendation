@@ -18,7 +18,7 @@ class MainController extends BaseController
             return redirect()->to(base_url('/anime'));
         }
         $data['anime'] = $this->animeModel
-            ->select('title, poster, genre, synopsis')
+            ->select('id_anime, title, poster, genre, synopsis')
             ->groupBy('id_anime')
             ->paginate(8);
         $data['pager'] = $this->animeModel->pager;
@@ -28,7 +28,7 @@ class MainController extends BaseController
     public function animeList()
     {
         $data['anime'] = $this->animeModel
-            ->select('title')
+            ->select('id_anime, title')
             ->like('title', 'A', 'after')
             ->groupBy('id_anime')
             ->paginate(30);
@@ -36,9 +36,9 @@ class MainController extends BaseController
         return view('anime-list', $data);
     }
 
-    public function detail($title)
+    public function detail($id_anime)
     {
-        $data['anime'] = $this->animeModel->where('title', $title)->first();
+        $data['anime'] = $this->animeModel->where('id_anime', $id_anime)->first();
         return view('anime-detail', $data);
     }
 

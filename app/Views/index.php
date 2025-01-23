@@ -271,11 +271,11 @@
             </div>
         </div>
     </div>
-    <div class="flex flex-wrap justify-around h-auto min-h-screen" id="animeContainer">
+    <div class="flex flex-wrap justify-around min-h-screen" id="animeContainer">
         <?php foreach ($anime as $data): ?>
             <div class="relative flex flex-col justify-items-center items-center max-w-sm max-h-max bg-slate-800 border border-gray-200
         rounded-lg text-stone-200 w-72 mt-8 shadow-xl shadow-indigo-500/50 group overflow-hidden break-inside-avoid">
-                <a href=" <?= base_url('anime/' . urlencode(strtolower($data['title']))) ?>">
+                <a href=" <?= base_url('anime/detail/' . urlencode($data['id_anime'])) ?>">
                     <img src="<?= esc('/uploads/data/' . $data['poster']); ?>" alt="poster" class="h-60 w-64 object-cover
                 bg-center bg-no-repeat mt-4">
                 </a>

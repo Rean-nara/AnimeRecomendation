@@ -10,7 +10,7 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'MainController::index');
 $routes->get('/anime', 'MainController::index');
 $routes->get('/anime/anime-list', 'MainController::animeList');
-$routes->get('/anime/(:segment)', 'MainController::detail/$1');
+$routes->get('/anime/detail/(:num)', 'MainController::detail/$1');
 $routes->post('/anime', 'MainController::filter');
 $routes->post('/anime/anime-list', 'MainController::sort');
 
